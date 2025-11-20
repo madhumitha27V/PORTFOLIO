@@ -154,15 +154,11 @@ const skillCategories = [
 
 Feel free to fork this project and customize it for your own portfolio needs.
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
 **Madhumitha V**
-- Email: madhumitha.v@gmail.com
-- Phone: +91 63812 28388
+- Email: 27madhumitha.v@gmail.com
 - LinkedIn: [Madhumitha.linkedin.com](https://linkedin.com/in/madhumitha)
 - GitHub: [Madhumitha.github.com](https://github.com/madhumitha)
 
