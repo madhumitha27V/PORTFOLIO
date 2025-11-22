@@ -21,8 +21,9 @@ const Hero = () => {
             <h1 className="hero-name">Madhumitha V</h1>
             <h2 className="hero-title">Electrical & Electronics Engineer</h2>
             <p className="hero-description">
-              Passionate about creating innovative solutions that bridge hardware and software. 
-              Focused on AI-powered systems, web development, and IoT applications that make a real-world impact.
+              Electrical and Electronics Engineering student with a strong foundation in Digital Electronics and a passion for building innovative, end-to-end technology solutions. 
+              I specialize in integrating hardware with full-stack web development, particularly in IoT systems and I'm actively working with the MERN stack. 
+              I'm seeking opportunities to apply my skills to real-world problems.
             </p>
             <div className="hero-buttons">
               <button className="btn btn-primary" onClick={handleContactClick}>
@@ -38,10 +39,7 @@ const Hero = () => {
               <div className="profile-image">
                 <i className="fas fa-user"></i>
               </div>
-              <div className="profile-info">
-                <h3>Madhumitha V</h3>
-                <p>EEE Student</p>
-              </div>
+             
             </div>
           </div>
         </div>
