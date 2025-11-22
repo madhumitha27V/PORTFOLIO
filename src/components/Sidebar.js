@@ -146,7 +146,7 @@ const Sidebar = () => {
           <a href="#achievements" className="nav-item" onClick={(e) => {e.preventDefault(); scrollToSection('achievements');}}>
             🏆 Achievements
           </a>
-          <a href="#education" className="nav-item" onClick={(e) => {e.preventDefault(); scrollToSection('achievements');}}>
+          <a href="#education" className="nav-item" onClick={(e) => {e.preventDefault(); scrollToSection('education');}}>
             🎓 Education
           </a>
           <a href="#certifications" className="nav-item" onClick={(e) => {e.preventDefault(); scrollToSection('certifications');}}>

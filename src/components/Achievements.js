@@ -95,7 +95,7 @@ const Achievements = () => {
           ))}
         </div>
 
-        <div className="education-section">
+        <div className="education-section" id="education">
           <h3>Education</h3>
           <div className="education-cards">
             <div className="education-card">
