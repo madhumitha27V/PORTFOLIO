@@ -32,11 +32,12 @@ const Sidebar = () => {
         height: '100vh',
         background: '#1e293b',
         zIndex: '9999',
-        padding: '2rem',
+        padding: '1.5rem',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        color: 'white'
+        color: 'white',
+        overflowY: 'auto'
       }}>
         <div className="sidebar-profile">
           <div className="profile-image">
@@ -133,7 +134,16 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <nav className="sidebar-nav">
+        <nav className="sidebar-nav" style={{
+          width: '100%',
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.5rem',
+          margin: '1.5rem 0',
+          overflowY: 'auto',
+          paddingRight: '0.5rem'
+        }}>
           <a href="#home" className="nav-item active" onClick={(e) => {e.preventDefault(); scrollToSection('home');}}>
             🏠 Home
           </a>
@@ -157,7 +167,13 @@ const Sidebar = () => {
           </a>
         </nav>
 
-        <div className="sidebar-social">
+        <div className="sidebar-social" style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '1rem',
+          marginTop: 'auto',
+          paddingTop: '1rem'
+        }}>
           <a href="https://github.com/madhumitha27V" target="_blank" rel="noopener noreferrer" className="social-link" title="GitHub">
             <i className="fab fa-github"></i>
           </a>
