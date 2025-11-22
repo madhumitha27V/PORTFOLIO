@@ -8,7 +8,7 @@ const Projects = () => {
       id: 1,
       title: "Authenticity Validator for Academia - SIH2025",
       //category: "Python | SQLite | OCR",
-      description: "The system verifies both physical and digital academic certificates by cross-checking uploaded records with institutional databases, detecting tampered marks, forged seals, duplicate entries, and invalid IDs.",
+      description: "Built a secure certificate verification system that detects tampered content, forged seals, duplicate records and invalid IDs using OCR and database cross-checking. Implemented bulk verification, real-time dashboards and blockchain-based validation to enhance accuracy, transparency and institutional trust.",
       features: [
         "Cross-checking with institutional databases",
         "Tampered marks detection",
@@ -18,14 +18,15 @@ const Projects = () => {
       ],
       technologies: ["Python", "SQLite", "OCR", "Blockchain","Tesseract"],
       githubLink: "https://github.com/madhumitha27V/CERTIFICATE-VALIDATOR.git",
-      liveLink: "#",
+      liveLink: "https://certificate-validator-94pp.onrender.com/",
       image: "🎓"
     },
     {
       id: 2,
       title: "Smart Drainage and Monitoring System",
       //category: "IoT | Web Interface | Real-time",
-      description: "The system automatically manages drainage and ventilation, ensuring safety by responding to changing water levels and environmental conditions.",
+      description: "Designed a smart drainage system that prevents overflow and gas issues by using automatic action with steady monitoring and early warning to handle problems before they increase.Built the solution to work with stable readings and timely response and delivered a reliable setup that improves safety and keeps drainage conditions under control in day-to-day use.",
+
       features: [
         "Automatic drainage management",
         "Real-time monitoring and predictive analysis",
@@ -42,7 +43,7 @@ const Projects = () => {
       id: 3,
       title: "Real-time Traffic Management System - SIH2024",
       //category: "AI | Cloud | Dynamic Signal Control",
-      description: "Built an AI-powered, cloud-based solution that predicts traffic congestion, controls signals dynamically, and prioritizes emergency vehicles using real-time video and GPS data.",
+      description: "To create a system that continuously compares vehicle counts on each lane and handles unpredictable traffic patterns and emergency vehicle detection without delays.AI-based solution that opens the lane with the highest traffic load and instantly prioritizes emergency vehicles by giving them a clear green path, improving overall flow and reducing congestion.",
       features: [
         "Real-time traffic prediction",
         "Dynamic signal control",
@@ -106,14 +107,16 @@ const Projects = () => {
                     <i className="fab fa-github"></i>
                     GitHub
                   </a>
-                  <a 
-                    href={project.liveLink} 
-                    className="project-link"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <i className="fas fa-external-link-alt"></i>
-                    Live Link
-                  </a>
+                  {project.liveLink !== "#" && (
+                    <a 
+                      href={project.liveLink} 
+                      className="project-link"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <i className="fas fa-external-link-alt"></i>
+                      Live Link
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -162,10 +165,12 @@ const Projects = () => {
                     <i className="fab fa-github"></i>
                     View Code
                   </a>
-                  <a href={selectedProject.liveLink} className="btn btn-primary">
-                    <i className="fas fa-external-link-alt"></i>
-                    Live Demo
-                  </a>
+                  {selectedProject.liveLink !== "#" && (
+                    <a href={selectedProject.liveLink} className="btn btn-primary">
+                      <i className="fas fa-external-link-alt"></i>
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

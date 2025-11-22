@@ -21,12 +21,6 @@ const Footer = () => {
       icon: 'fas fa-envelope',
       url: 'mailto:27madhumitha.v@gmail.com',
       color: '#EA4335'
-    },
-    {
-      platform: 'Phone',
-      icon: 'fas fa-phone',
-      url: 'tel:+916381228388',
-      color: '#25D366'
     }
   ];
 
@@ -81,10 +75,7 @@ const Footer = () => {
                 <i className="fas fa-envelope"></i>
                 madhumitha.v@gmail.com
               </p>
-              <p>
-                <i className="fas fa-phone"></i>
-                +91 63812 28388
-              </p>
+             
               <p>
                 <i className="fas fa-graduation-cap"></i>
                 Kongu Engineering College

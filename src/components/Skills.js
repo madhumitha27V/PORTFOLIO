@@ -72,19 +72,7 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="additional-skills">
-          <h3>Additional Technologies</h3>
-          <div className="tech-tags">
-            <span className="tech-tag">MERN Stack</span>
-            <span className="tech-tag">Embedded C</span>
-            <span className="tech-tag">Arduino</span>
-            <span className="tech-tag">Azure AI</span>
-            <span className="tech-tag">Oracle Cloud</span>
-            <span className="tech-tag">Version Control</span>
-            <span className="tech-tag">Agile Development</span>
-            <span className="tech-tag">Problem Solving</span>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

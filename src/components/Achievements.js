@@ -16,7 +16,7 @@ const Achievements = () => {
       title: "Class Representative",
       description: "Served as Class Representative for one semester in 2nd year, facilitated communication between students and faculty, and coordinated academic initiatives.",
       category: "Leadership",
-      date: "2023-2024",
+      date: "2024-2025",
       icon: "fas fa-users",
       color: "blue"
     },
@@ -50,14 +50,22 @@ const Achievements = () => {
     }
   ];
 
-  const education = {
-    college: "Kongu Engineering College",
+const education = {
+  college: {
+    name: "Kongu Engineering College",
     degree: "B.E. Electrical and Electronics Engineering",
-    cgpa: "8.04 (till 4th semester)",
+    cgpa: "8.04 (till 4th semester)"
+  },
+  higherSecondary: {
     school: "S.S.M. Lakshmi Ammal Matriculation Higher Secondary School",
-    hsc: "HSC and SSLC",
+    qualification: "HSC",
     percentage: "80.8%"
-  };
+  },
+  secondary: {
+    school: "S.S.M. Lakshmi Ammal Matriculation Higher Secondary School",
+    qualification: "SSLC"
+  }
+};
 
   return (
     <section className="achievements" id="achievements">
@@ -100,82 +108,171 @@ const Achievements = () => {
           <div style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '1.5rem',
+            gap: '2rem',
             maxWidth: '800px',
             margin: '0 auto'
           }}>
+            {/* College Education */}
             <div style={{
-              background: 'white',
-              borderRadius: '10px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              borderRadius: '15px',
               padding: '1.5rem',
-              boxShadow: '0 5px 15px rgba(0, 0, 0, 0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1rem',
-              border: '2px solid #3b82f6'
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+              border: '1px solid rgba(168, 85, 247, 0.2)',
+              backdropFilter: 'blur(10px)'
             }}>
               <div style={{
-                fontSize: '2rem',
-                color: '#3b82f6'
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '1rem'
               }}>
-                <i className="fas fa-graduation-cap"></i>
-              </div>
-              <div style={{ flex: 1 }}>
                 <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '1rem',
-                  flexWrap: 'wrap'
+                  fontSize: '2rem',
+                  color: '#a855f7',
+                  marginTop: '0.2rem'
                 }}>
-                  <h4 style={{ color: '#333', margin: 0, fontSize: '1.1rem' }}>
-                    {education.college}
-                  </h4>
-                  <span style={{ color: '#666', fontSize: '0.9rem' }}>•</span>
-                  <span style={{ color: '#666', fontSize: '0.9rem' }}>
-                    {education.degree}
-                  </span>
-                  <span style={{ color: '#666', fontSize: '0.9rem' }}>•</span>
-                  <span style={{ color: '#3b82f6', fontWeight: '500', fontSize: '0.9rem' }}>
-                    CGPA: {education.cgpa}
-                  </span>
+                  <i className="fas fa-graduation-cap"></i>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem'
+                  }}>
+                    <h4 style={{ 
+                      color: '#ffffff', 
+                      margin: 0, 
+                      fontSize: '1.2rem',
+                      fontWeight: '600'
+                    }}>
+                      {education.college.name}
+                    </h4>
+                    <p style={{ 
+                      color: '#e2e8f0', 
+                      margin: 0,
+                      fontSize: '1rem'
+                    }}>
+                      {education.college.degree}
+                    </p>
+                    <p style={{ 
+                      color: '#a855f7', 
+                      margin: 0,
+                      fontSize: '1rem',
+                      fontWeight: '500'
+                    }}>
+                      CGPA: {education.college.cgpa}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-            
+
+            {/* Higher Secondary Education */}
             <div style={{
-              background: 'white',
-              borderRadius: '10px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              borderRadius: '15px',
               padding: '1.5rem',
-              boxShadow: '0 5px 15px rgba(0, 0, 0, 0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1rem',
-              border: '2px solid #3b82f6'
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+              border: '1px solid rgba(168, 85, 247, 0.2)',
+              backdropFilter: 'blur(10px)'
             }}>
               <div style={{
-                fontSize: '2rem',
-                color: '#3b82f6'
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '1rem'
               }}>
-                <i className="fas fa-school"></i>
-              </div>
-              <div style={{ flex: 1 }}>
                 <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '1rem',
-                  flexWrap: 'wrap'
+                  fontSize: '2rem',
+                  color: '#3b82f6',
+                  marginTop: '0.2rem'
                 }}>
-                  <h4 style={{ color: '#333', margin: 0, fontSize: '1.1rem' }}>
-                    {education.school}
-                  </h4>
-                  <span style={{ color: '#666', fontSize: '0.9rem' }}>•</span>
-                  <span style={{ color: '#666', fontSize: '0.9rem' }}>
-                    {education.hsc}
-                  </span>
-                  <span style={{ color: '#666', fontSize: '0.9rem' }}>•</span>
-                  <span style={{ color: '#3b82f6', fontWeight: '500', fontSize: '0.9rem' }}>
-                    HSC Percentage: {education.percentage}
-                  </span>
+                  <i className="fas fa-school"></i>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem'
+                  }}>
+                    <h4 style={{ 
+                      color: '#ffffff', 
+                      margin: 0, 
+                      fontSize: '1.2rem',
+                      fontWeight: '600'
+                    }}>
+                      {education.higherSecondary.school}
+                    </h4>
+                    <p style={{ 
+                      color: '#e2e8f0', 
+                      margin: 0,
+                      fontSize: '1rem'
+                    }}>
+                      {education.higherSecondary.qualification}
+                    </p>
+                    <p style={{ 
+                      color: '#a855f7', 
+                      margin: 0,
+                      fontSize: '1rem',
+                      fontWeight: '500'
+                    }}>
+                      {education.higherSecondary.percentage}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Secondary Education */}
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.1)',
+              borderRadius: '15px',
+              padding: '1.5rem',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+              border: '1px solid rgba(168, 85, 247, 0.2)',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '1rem'
+              }}>
+                <div style={{
+                  fontSize: '2rem',
+                  color: '#3b82f6',
+                  marginTop: '0.2rem'
+                }}>
+                  <i className="fas fa-school"></i>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem'
+                  }}>
+                    <h4 style={{ 
+                      color: '#ffffff', 
+                      margin: 0, 
+                      fontSize: '1.2rem',
+                      fontWeight: '600'
+                    }}>
+                      {education.secondary.school}
+                    </h4>
+                    <p style={{ 
+                      color: '#e2e8f0', 
+                      margin: 0,
+                      fontSize: '1rem'
+                    }}>
+                      {education.secondary.qualification}
+                    </p>
+                    <p style={{ 
+                      color: '#a855f7', 
+                      margin: 0,
+                      fontSize: '1rem',
+                      fontWeight: '500'
+                    }}>
+                      {education.secondary.percentage}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -22,16 +22,58 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    // Basic form validation
+    if (!formData.fullName.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setSubmitStatus('error');
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ fullName: '', email: '', message: '' });
-      
+      setTimeout(() => setSubmitStatus(''), 5000);
+      return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus(''), 5000);
+      return;
+    }
+    
+    try {
+      // Send to your backend server
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.fullName.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim()
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.status === 'success') {
+        setIsSubmitting(false);
+        setSubmitStatus('success');
+        setFormData({ fullName: '', email: '', message: '' });
+        
+        setTimeout(() => {
+          setSubmitStatus('');
+        }, 5000);
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setIsSubmitting(false);
+      setSubmitStatus('error');
       setTimeout(() => {
         setSubmitStatus('');
-      }, 3000);
-    }, 1500);
+      }, 5000);
+    }
   };
 
   return (
@@ -144,7 +186,14 @@ const Contact = () => {
               {submitStatus === 'success' && (
                 <div className="submit-status success">
                   <i className="fas fa-check-circle"></i>
-                  Message sent successfully!
+                  Email sent successfully! I'll get back to you soon.
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="submit-status error">
+                  <i className="fas fa-exclamation-circle"></i>
+                  Failed to send email. Please try again or contact me directly.
                 </div>
               )}
             </form>

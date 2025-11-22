@@ -29,7 +29,7 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="nav-brand">
-          <h2>Madhumitha V</h2>
+          {/* Brand name removed */}
         </div>
         
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
