@@ -40,8 +40,12 @@ const Contact = () => {
     }
     
     try {
-      // Send to your backend server
-      const response = await fetch('http://localhost:5000/api/contact', {
+      // Send to Netlify Functions
+      const backendUrl = process.env.NODE_ENV === 'production' 
+        ? '/api/contact' 
+        : 'http://localhost:5000/api/contact';
+      
+      const response = await fetch(backendUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
