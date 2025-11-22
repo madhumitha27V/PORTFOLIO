@@ -73,7 +73,7 @@ const Footer = () => {
             <div className="footer-contact">
               <p>
                 <i className="fas fa-envelope"></i>
-                madhumitha.v@gmail.com
+                27madhumitha.v@gmail.com
               </p>
              
               <p>

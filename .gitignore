@@ -1,8 +1,7 @@
-node_modules
-
-# Environment variables
+node_modules/
 .env
 portfolio-backend/.env
-
-# Local Netlify folder
-.netlify
+portfolio-backend/node_modules/
+.DS_Store
+build/
+.netlify/
