@@ -1,4 +1,8 @@
 node_modules
 
+# Environment variables
+.env
+portfolio-backend/.env
+
 # Local Netlify folder
 .netlify
