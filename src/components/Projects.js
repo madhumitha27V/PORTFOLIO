@@ -7,7 +7,7 @@ const Projects = () => {
     {
       id: 1,
       title: "Authenticity Validator for Academia - SIH2025",
-      category: "Python | SQLite | OCR",
+      //category: "Python | SQLite | OCR",
       description: "The system verifies both physical and digital academic certificates by cross-checking uploaded records with institutional databases, detecting tampered marks, forged seals, duplicate entries, and invalid IDs.",
       features: [
         "Cross-checking with institutional databases",
@@ -16,7 +16,7 @@ const Projects = () => {
         "Real-time monitoring and forgery detection",
         "Secure data management"
       ],
-      technologies: ["Python", "SQLite", "OCR", "Blockchain", "Machine Learning"],
+      technologies: ["Python", "SQLite", "OCR", "Blockchain","Tesseract"],
       githubLink: "https://github.com/madhumitha27V/CERTIFICATE-VALIDATOR.git",
       liveLink: "#",
       image: "🎓"
@@ -24,7 +24,7 @@ const Projects = () => {
     {
       id: 2,
       title: "Smart Drainage and Monitoring System",
-      category: "IoT | Web Interface | Real-time",
+      //category: "IoT | Web Interface | Real-time",
       description: "The system automatically manages drainage and ventilation, ensuring safety by responding to changing water levels and environmental conditions.",
       features: [
         "Automatic drainage management",
@@ -33,7 +33,7 @@ const Projects = () => {
         "Remote control features",
         "Flood prevention optimization"
       ],
-      technologies: ["IoT", "Sensors", "Web Interface", "Real-time Analytics", "Weather API"],
+      technologies: ["IoT", "Sensors", "Web Interface", "MERN", "Weather API"],
       githubLink: "https://github.com/madhumitha27V/SMART-DRAINAGE-SYSTEM-AND-MONITORING-WITH-WEB-INTERFACE.git",
       liveLink: "#",
       image: "🌊"
@@ -41,7 +41,7 @@ const Projects = () => {
     {
       id: 3,
       title: "Real-time Traffic Management System - SIH2024",
-      category: "AI | Cloud | Dynamic Signal Control",
+      //category: "AI | Cloud | Dynamic Signal Control",
       description: "Built an AI-powered, cloud-based solution that predicts traffic congestion, controls signals dynamically, and prioritizes emergency vehicles using real-time video and GPS data.",
       features: [
         "Real-time traffic prediction",
@@ -50,7 +50,7 @@ const Projects = () => {
         "Centralized React-based dashboard",
         "Cloud-hosted ML models on AWS"
       ],
-      technologies: ["AI", "React", "AWS", "Computer Vision", "Real-time Processing"],
+      technologies: ["AI", "TensorFlow", "YOLOv8", "Computer Vision", "Image Processing"],
       githubLink: "https://github.com/madhumitha27V/REAL-TIME-TRAFFIC-MANAGEMENT-SYSTEM-FOR-DYNAMIC-SIGNAL-CONTROL-AND-EMERGENCY-VEHICLE-PRIORITIZATION.git",
       liveLink: "#",
       image: "🚦"
@@ -89,9 +89,12 @@ const Projects = () => {
                 <p className="project-description">{project.description}</p>
                 
                 <div className="project-tech">
-                  {project.technologies.slice(0, 3).map((tech, index) => (
+                  {project.technologies.map((tech, index) => (
                     <span key={index} className="tech-tag">{tech}</span>
                   ))}
+                  {project.technologies.length > 5 && (
+                    <span className="tech-tag more-tech">+{project.technologies.length - 5} more</span>
+                  )}
                 </div>
 
                 <div className="project-links">
