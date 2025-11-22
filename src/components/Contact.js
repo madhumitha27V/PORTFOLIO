@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -40,36 +41,29 @@ const Contact = () => {
     }
     
     try {
-      // Send to Netlify Functions
-      const backendUrl = process.env.NODE_ENV === 'production' 
-        ? '/api/contact' 
-        : 'http://localhost:5000/api/contact';
+      // Use EmailJS for reliable email sending
+      const templateParams = {
+        from_name: formData.fullName.trim(),
+        from_email: formData.email.trim(),
+        message: formData.message.trim(),
+        to_name: 'Madhumitha V'
+      };
+
+      const result = await emailjs.send(
+        'service_t5d68hj', // EmailJS Service ID
+        'template_x4b32wm', // EmailJS Template ID
+        templateParams,
+        'YIGgq9KOPzrSO_0Tu' // EmailJS Public Key
+      );
+
+      console.log('Email sent successfully:', result);
+      setIsSubmitting(false);
+      setSubmitStatus('success');
+      setFormData({ fullName: '', email: '', message: '' });
       
-      const response = await fetch(backendUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.fullName.trim(),
-          email: formData.email.trim(),
-          message: formData.message.trim()
-        })
-      });
-
-      const result = await response.json();
-
-      if (response.ok && result.status === 'success') {
-        setIsSubmitting(false);
-        setSubmitStatus('success');
-        setFormData({ fullName: '', email: '', message: '' });
-        
-        setTimeout(() => {
-          setSubmitStatus('');
-        }, 5000);
-      } else {
-        throw new Error(result.message || 'Failed to send message');
-      }
+      setTimeout(() => {
+        setSubmitStatus('');
+      }, 5000);
     } catch (error) {
       console.error('Error sending email:', error);
       setIsSubmitting(false);
