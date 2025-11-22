@@ -62,6 +62,30 @@ exports.handler = async (event, context) => {
       };
     }
 
+    // Debug: Log environment variables (without showing actual values)
+    console.log('Environment check:', {
+      hasGmailUser: !!process.env['GMAIL_USER'],
+      hasGmailPassword: !!process.env['GMAIL_APP_PASSWORD'],
+      userLength: process.env['GMAIL_USER'] ? process.env['GMAIL_USER'].length : 0,
+      passLength: process.env['GMAIL_APP_PASSWORD'] ? process.env['GMAIL_APP_PASSWORD'].length : 0
+    });
+
+    // Check if environment variables exist
+    if (!process.env['GMAIL_USER'] || !process.env['GMAIL_APP_PASSWORD']) {
+      console.error('Missing environment variables');
+      return {
+        statusCode: 500,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          status: 'error',
+          message: 'Server configuration error - missing credentials'
+        })
+      };
+    }
+
     // Create transporter
     const transporter = nodemailer.createTransporter({
       service: 'gmail',
@@ -114,7 +138,9 @@ Reply to: ${email}
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
+    console.log('Attempting to send email...');
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', info.messageId);
 
     return {
       statusCode: 200,
@@ -129,7 +155,8 @@ Reply to: ${email}
     };
 
   } catch (error) {
-    console.error('❌ Email sending error:', error);
+    console.error('❌ Email sending error:', error.message);
+    console.error('❌ Full error:', error);
     
     return {
       statusCode: 500,
@@ -139,6 +166,9 @@ Reply to: ${email}
       },
       body: JSON.stringify({
         status: 'error',
+        message: `Failed to send email: ${error.message}`
+      })
+    };
         message: 'Failed to send email. Please try again later.'
       })
     };
