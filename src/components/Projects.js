@@ -18,7 +18,7 @@ const Projects = () => {
       ],
       technologies: ["Python", "SQLite", "OCR", "Blockchain","Tesseract"],
       githubLink: "https://github.com/madhumitha27V/CERTIFICATE-VALIDATOR.git",
-      liveLink: "https://certificate-validator-94pp.onrender.com/",
+      liveLink: "#",
       image: "🎓"
     },
     {
@@ -107,16 +107,14 @@ const Projects = () => {
                     <i className="fab fa-github"></i>
                     GitHub
                   </a>
-                  {project.liveLink !== "#" && (
-                    <a 
-                      href={project.liveLink} 
-                      className="project-link"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <i className="fas fa-external-link-alt"></i>
-                      Live Link
-                    </a>
-                  )}
+                  <a 
+                    href={project.liveLink} 
+                    className="project-link"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <i className="fas fa-external-link-alt"></i>
+                    Live Link
+                  </a>
                 </div>
               </div>
             </div>
@@ -165,12 +163,10 @@ const Projects = () => {
                     <i className="fab fa-github"></i>
                     View Code
                   </a>
-                  {selectedProject.liveLink !== "#" && (
-                    <a href={selectedProject.liveLink} className="btn btn-primary">
-                      <i className="fas fa-external-link-alt"></i>
-                      Live Demo
-                    </a>
-                  )}
+                  <a href={selectedProject.liveLink} className="btn btn-primary">
+                    <i className="fas fa-external-link-alt"></i>
+                    Live Demo
+                  </a>
                 </div>
               </div>
             </div>
