@@ -42,7 +42,7 @@ const Skills = () => {
       <div className="container">
         <div className="section-header">
           <h2>Skills</h2>
-          <p>This is something I do really well.</p>
+          <p>My technical skills that I've developed through coursework, practice and projects.</p>
         </div>
         
         <div className="skills-grid">
