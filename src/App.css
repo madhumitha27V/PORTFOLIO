@@ -38,15 +38,17 @@ body {
   top: 0;
   width: 280px;
   height: 100vh;
-  background: rgba(15, 23, 42, 0.95);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 100%);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 1000;
   transition: transform 0.3s ease;
-  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .sidebar.mobile-hidden {
@@ -80,6 +82,12 @@ body {
   
   .sidebar-toggle {
     display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0) !important;
   }
 }
 
