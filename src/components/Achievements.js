@@ -97,53 +97,87 @@ const Achievements = () => {
 
         <div className="education-section" id="education">
           <h3>Education</h3>
-          <div className="education-cards">
-            <div className="education-card">
-              <div className="education-icon">
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.5rem',
+            maxWidth: '800px',
+            margin: '0 auto'
+          }}>
+            <div style={{
+              background: 'white',
+              borderRadius: '10px',
+              padding: '1.5rem',
+              boxShadow: '0 5px 15px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
+              border: '2px solid #3b82f6'
+            }}>
+              <div style={{
+                fontSize: '2rem',
+                color: '#3b82f6'
+              }}>
                 <i className="fas fa-graduation-cap"></i>
               </div>
-              <div className="education-content">
-                <h4>{education.college}</h4>
-                <p className="education-degree">{education.degree}</p>
-                <p className="education-grade">CGPA: {education.cgpa}</p>
+              <div style={{ flex: 1 }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  flexWrap: 'wrap'
+                }}>
+                  <h4 style={{ color: '#333', margin: 0, fontSize: '1.1rem' }}>
+                    {education.college}
+                  </h4>
+                  <span style={{ color: '#666', fontSize: '0.9rem' }}>•</span>
+                  <span style={{ color: '#666', fontSize: '0.9rem' }}>
+                    {education.degree}
+                  </span>
+                  <span style={{ color: '#666', fontSize: '0.9rem' }}>•</span>
+                  <span style={{ color: '#3b82f6', fontWeight: '500', fontSize: '0.9rem' }}>
+                    CGPA: {education.cgpa}
+                  </span>
+                </div>
               </div>
             </div>
             
-            <div className="education-card">
-              <div className="education-icon">
+            <div style={{
+              background: 'white',
+              borderRadius: '10px',
+              padding: '1.5rem',
+              boxShadow: '0 5px 15px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
+              border: '2px solid #3b82f6'
+            }}>
+              <div style={{
+                fontSize: '2rem',
+                color: '#3b82f6'
+              }}>
                 <i className="fas fa-school"></i>
               </div>
-              <div className="education-content">
-                <h4>{education.school}</h4>
-                <p className="education-degree">{education.hsc}</p>
-                <p className="education-grade">HSC Percentage: {education.percentage}</p>
+              <div style={{ flex: 1 }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  flexWrap: 'wrap'
+                }}>
+                  <h4 style={{ color: '#333', margin: 0, fontSize: '1.1rem' }}>
+                    {education.school}
+                  </h4>
+                  <span style={{ color: '#666', fontSize: '0.9rem' }}>•</span>
+                  <span style={{ color: '#666', fontSize: '0.9rem' }}>
+                    {education.hsc}
+                  </span>
+                  <span style={{ color: '#666', fontSize: '0.9rem' }}>•</span>
+                  <span style={{ color: '#3b82f6', fontWeight: '500', fontSize: '0.9rem' }}>
+                    HSC Percentage: {education.percentage}
+                  </span>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="certifications-highlight">
-          <h3>Key Certifications</h3>
-          <div className="cert-grid">
-            <div className="cert-card microsoft">
-              <i className="fab fa-microsoft"></i>
-              <h4>Microsoft Applied Skills</h4>
-              <p>Azure AI Language Processing</p>
-            </div>
-            <div className="cert-card oracle">
-              <i className="fas fa-cloud"></i>
-              <h4>Oracle Cloud Infrastructure</h4>
-              <p>AI Foundations Associate</p>
-            </div>
-            <div className="cert-card arm">
-              <i className="fas fa-microchip"></i>
-              <h4>ARM Embedded Development</h4>
-              <p>ARM Processor Application Development</p>
-            </div>
-            <div className="cert-card ecad">
-              <i className="fas fa-drafting-compass"></i>
-              <h4>ECAD Certification</h4>
-              <p>Electronic Computer Aided Design</p>
             </div>
           </div>
         </div>
