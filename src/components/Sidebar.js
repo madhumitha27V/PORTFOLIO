@@ -59,19 +59,22 @@ const Sidebar = () => {
           <a href="#achievements" className="nav-item" onClick={(e) => {e.preventDefault(); scrollToSection('achievements');}}>
             🏆 Achievements
           </a>
+          <a href="#certifications" className="nav-item" onClick={(e) => {e.preventDefault(); scrollToSection('achievements');}}>
+            🎓 Certifications
+          </a>
           <a href="#contact" className="nav-item" onClick={(e) => {e.preventDefault(); scrollToSection('contact');}}>
             📧 Contact
           </a>
         </nav>
 
         <div className="sidebar-social">
-          <a href="https://linkedin.com/in/madhumitha" target="_blank" rel="noopener noreferrer" className="social-link" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/madhhv/" target="_blank" rel="noopener noreferrer" className="social-link" title="LinkedIn">
             IN
           </a>
           <a href="https://github.com/madhumitha27V" target="_blank" rel="noopener noreferrer" className="social-link" title="GitHub">
             GH
           </a>
-          <a href="mailto:madhumitha.v@gmail.com" className="social-link" title="Email">
+          <a href="mailto:27madhumitha.v@gmail.com" className="social-link" title="Email">
             📧
           </a>
           <a href="tel:+916381228388" className="social-link" title="Phone">

@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Sidebar from './components/Sidebar';
-import Header from './components/Header';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -14,7 +13,6 @@ function App() {
     <div className="App">
       <Sidebar />
       <div className="main-content">
-        <Header />
         <Hero />
         <Skills />
         <Projects />

@@ -50,7 +50,7 @@ const Contact = () => {
               </div>
               <div className="contact-details">
                 <h3>Email</h3>
-                <p>madhumitha.v@gmail.com</p>
+                <p>27madhumitha.v@gmail.com</p>
                 <a href="mailto:27madhumitha.v@gmail.com" className="contact-link">
                   Send Email
                 </a>
@@ -66,7 +66,7 @@ const Contact = () => {
               <div className="contact-details">
                 <h3>LinkedIn</h3>
                 <p>Madhumitha.linkedin.com</p>
-                <a href="https://linkedin.com/in/madhumitha" target="_blank" rel="noopener noreferrer" className="contact-link">
+                <a href="https://www.linkedin.com/in/madhhv/" target="_blank" rel="noopener noreferrer" className="contact-link">
                   Connect
                 </a>
               </div>

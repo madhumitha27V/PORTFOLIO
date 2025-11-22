@@ -7,7 +7,7 @@ const Footer = () => {
     {
       platform: 'LinkedIn',
       icon: 'fab fa-linkedin',
-      url: 'https://linkedin.com/in/madhumitha',
+      url: 'https://www.linkedin.com/in/madhhv/',
       color: '#0077B5'
     },
     {
