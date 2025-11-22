@@ -166,24 +166,6 @@ const Sidebar = () => {
             📧 Contact
           </a>
         </nav>
-
-        <div className="sidebar-social" style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '1rem',
-          marginTop: 'auto',
-          paddingTop: '1rem'
-        }}>
-          <a href="https://github.com/madhumitha27V" target="_blank" rel="noopener noreferrer" className="social-link" title="GitHub">
-            <i className="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/madhhv/" target="_blank" rel="noopener noreferrer" className="social-link" title="LinkedIn">
-            <i className="fab fa-linkedin"></i>
-          </a>
-          <a href="mailto:27madhumitha.v@gmail.com" className="social-link" title="Email">
-            <i className="fas fa-envelope"></i>
-          </a>
-        </div>
       </div>
     </>
   );
