@@ -69,8 +69,8 @@ exports.handler = async (event, context) => {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD
+        user: process.env['GMAIL_USER'],
+        pass: process.env['GMAIL_APP_PASSWORD']
       },
       tls: {
         rejectUnauthorized: false
@@ -81,9 +81,9 @@ exports.handler = async (event, context) => {
     const mailOptions = {
       from: {
         name: 'Portfolio Contact Form',
-        address: process.env.GMAIL_USER
+        address: process.env['GMAIL_USER']
       },
-      to: process.env.GMAIL_USER,
+      to: process.env['GMAIL_USER'],
       replyTo: email,
       subject: `Portfolio Contact from: ${name}`,
       html: `
