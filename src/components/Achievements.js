@@ -18,7 +18,7 @@ const Achievements = () => {
       category: "Leadership",
       date: "2023-2024",
       icon: "fas fa-users",
-      color: "brown"
+      color: "blue"
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ const Achievements = () => {
       category: "Achievement",
       date: "2025",
       icon: "fas fa-medal",
-      color: "brown",
+      color: "blue",
       reward: "₹1000"
     },
     {
