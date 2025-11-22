@@ -68,17 +68,14 @@ const Sidebar = () => {
         </nav>
 
         <div className="sidebar-social">
-          <a href="https://www.linkedin.com/in/madhhv/" target="_blank" rel="noopener noreferrer" className="social-link" title="LinkedIn">
-            IN
-          </a>
           <a href="https://github.com/madhumitha27V" target="_blank" rel="noopener noreferrer" className="social-link" title="GitHub">
-            GH
+            <i className="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/madhhv/" target="_blank" rel="noopener noreferrer" className="social-link" title="LinkedIn">
+            <i className="fab fa-linkedin"></i>
           </a>
           <a href="mailto:27madhumitha.v@gmail.com" className="social-link" title="Email">
-            📧
-          </a>
-          <a href="tel:+916381228388" className="social-link" title="Phone">
-            📞
+            <i className="fas fa-envelope"></i>
           </a>
         </div>
       </div>
