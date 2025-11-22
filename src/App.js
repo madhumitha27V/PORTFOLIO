@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
@@ -11,13 +12,16 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Achievements />
-      <Contact />
-      <Footer />
+      <Sidebar />
+      <div className="main-content">
+        <Header />
+        <Hero />
+        <Skills />
+        <Projects />
+        <Achievements />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }

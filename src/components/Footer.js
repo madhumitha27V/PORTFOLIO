@@ -19,7 +19,7 @@ const Footer = () => {
     {
       platform: 'Email',
       icon: 'fas fa-envelope',
-      url: 'mailto:madhumitha.v@gmail.com',
+      url: 'mailto:27madhumitha.v@gmail.com',
       color: '#EA4335'
     },
     {
