@@ -44,6 +44,93 @@ const Sidebar = () => {
           </div>
           <h3 className="profile-name">Madhumitha V</h3>
           <p className="profile-title">Electrical & Electronics Engineer</p>
+          
+          {/* Profile Social Links */}
+          <div className="profile-social" style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '1rem',
+            marginTop: '1rem'
+          }}>
+            <a href="https://github.com/madhumitha27V" target="_blank" rel="noopener noreferrer" 
+               className="social-link" title="GitHub" style={{
+                 display: 'flex',
+                 alignItems: 'center',
+                 justifyContent: 'center',
+                 width: '40px',
+                 height: '40px',
+                 backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                 color: '#3b82f6',
+                 borderRadius: '50%',
+                 textDecoration: 'none',
+                 transition: 'all 0.3s ease',
+                 fontSize: '1.1rem'
+               }}
+               onMouseEnter={(e) => {
+                 e.target.style.backgroundColor = '#3b82f6';
+                 e.target.style.color = 'white';
+                 e.target.style.transform = 'translateY(-2px)';
+               }}
+               onMouseLeave={(e) => {
+                 e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.1)';
+                 e.target.style.color = '#3b82f6';
+                 e.target.style.transform = 'translateY(0)';
+               }}>
+              <i className="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/madhhv/" target="_blank" rel="noopener noreferrer" 
+               className="social-link" title="LinkedIn" style={{
+                 display: 'flex',
+                 alignItems: 'center',
+                 justifyContent: 'center',
+                 width: '40px',
+                 height: '40px',
+                 backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                 color: '#3b82f6',
+                 borderRadius: '50%',
+                 textDecoration: 'none',
+                 transition: 'all 0.3s ease',
+                 fontSize: '1.1rem'
+               }}
+               onMouseEnter={(e) => {
+                 e.target.style.backgroundColor = '#3b82f6';
+                 e.target.style.color = 'white';
+                 e.target.style.transform = 'translateY(-2px)';
+               }}
+               onMouseLeave={(e) => {
+                 e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.1)';
+                 e.target.style.color = '#3b82f6';
+                 e.target.style.transform = 'translateY(0)';
+               }}>
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:27madhumitha.v@gmail.com" 
+               className="social-link" title="Email" style={{
+                 display: 'flex',
+                 alignItems: 'center',
+                 justifyContent: 'center',
+                 width: '40px',
+                 height: '40px',
+                 backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                 color: '#3b82f6',
+                 borderRadius: '50%',
+                 textDecoration: 'none',
+                 transition: 'all 0.3s ease',
+                 fontSize: '1.1rem'
+               }}
+               onMouseEnter={(e) => {
+                 e.target.style.backgroundColor = '#3b82f6';
+                 e.target.style.color = 'white';
+                 e.target.style.transform = 'translateY(-2px)';
+               }}
+               onMouseLeave={(e) => {
+                 e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.1)';
+                 e.target.style.color = '#3b82f6';
+                 e.target.style.transform = 'translateY(0)';
+               }}>
+              <i className="fas fa-envelope"></i>
+            </a>
+          </div>
         </div>
 
         <nav className="sidebar-nav">
