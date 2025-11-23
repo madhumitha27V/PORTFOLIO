@@ -12,9 +12,7 @@ const Hero = () => {
               
             </div>
             <p className="hero-description">
-              A passionate Electrical Engineering student specializing in frontend development 
-              and IoT solutions. I create innovative digital experiences with modern web technologies 
-              and bring creative ideas to life through code.
+              Im an Electrical and Electronics Engineering student with a strong foundation in Digital Electronics and a passion for building innovative, end-to-end technology solutions I specialize in integrating hardware with full-stack web development to solve real-world problems with strong interest in IoT and also Im actively working with mern stack.I am actively seeking opportunities to apply my skill to create impactful and scalable solutions.
             </p>
             
             <div className="hero-buttons">
