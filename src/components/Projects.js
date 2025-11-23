@@ -41,6 +41,22 @@ const Projects = () => {
     },
     {
       id: 3,
+      title: "AI Bug Tracker - Smart Debug Assistant",
+      description: "Built an intelligent log-analysis system that automated root-cause detection, sensitive data redaction, duplicate identification, and response caching, improving analysis efficiency and reducing repeated processing by 40%. Designed a secure, high-performance backend workflow with real-time dashboard monitoring, structured validation, and optimized log-processing pipelines, achieving 25% faster analysis time and enhanced reliability.",
+      features: [
+        "AI-powered analysis using OpenAI GPT-4",
+        "Sensitive data redaction and security features",
+        "Duplicate detection with SHA-256 hashing",
+        "Smart caching for similar logs",
+        "Real-time dashboard monitoring"
+      ],
+      technologies: ["React", "Node.js", "Express", "OpenAI API", "SQLite", "Tailwind CSS"],
+      githubLink: "https://github.com/madhumitha27V/AI-BUG-TRACKER---SMART-DEBUG-ASSISTANT-",
+      //liveLink: "#",
+      image: "🚀"
+    },
+    {
+      id: 4,
       title: "Real-time Traffic Management System - SIH2024",
       //category: "AI | Cloud | Dynamic Signal Control",
       description: "To create a system that continuously compares vehicle counts on each lane and handles unpredictable traffic patterns and emergency vehicle detection without delays.AI-based solution that opens the lane with the highest traffic load and instantly prioritizes emergency vehicles by giving them a clear green path, improving overall flow and reducing congestion.",
