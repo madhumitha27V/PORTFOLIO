@@ -7,16 +7,14 @@ const Contact = () => {
   const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_sykfpfn';
   const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || '3F0TrdMjykpNA4fMT';
 
-  // Initialize EmailJS with better error handling
+  // Initialize EmailJS
   useEffect(() => {
     try {
       emailjs.init(EMAILJS_PUBLIC_KEY);
-      console.log('EmailJS initialized successfully');
-      console.log('Using Service ID:', EMAILJS_SERVICE_ID);
     } catch (error) {
       console.error('EmailJS initialization failed:', error);
     }
-  }, [EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID]);
+  }, [EMAILJS_PUBLIC_KEY]);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -56,32 +54,16 @@ const Contact = () => {
     }
     
     try {
-      console.log('🚀 Starting email send process...');
-      console.log('Environment:', process.env.NODE_ENV);
-      console.log('Current URL:', window.location.origin);
-      console.log('Service ID:', EMAILJS_SERVICE_ID);
-      console.log('Template ID:', EMAILJS_TEMPLATE_ID);
-      console.log('Public Key:', EMAILJS_PUBLIC_KEY);
-      
       // Prepare template parameters
       const templateParams = {
         from_name: formData.fullName.trim(),
         from_email: formData.email.trim(),
         message: formData.message.trim(),
-        to_name: 'Madhumitha', // Add recipient name
+        to_name: 'Madhumitha',
         reply_to: formData.email.trim()
       };
       
-      console.log('📧 Template params:', templateParams);
-      
-      // Test EmailJS availability
-      if (typeof emailjs === 'undefined') {
-        throw new Error('EmailJS is not loaded');
-      }
-      
-      console.log('📤 Sending email via EmailJS...');
-      
-      // Send email using EmailJS - simplified version for production
+      // Send email using EmailJS
       const result = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -89,12 +71,7 @@ const Contact = () => {
         EMAILJS_PUBLIC_KEY
       );
 
-      console.log('✅ EmailJS result:', result);
-      console.log('Status:', result.status);
-      console.log('Text:', result.text);
-
       if (result.status === 200) {
-        console.log('🎉 Email sent successfully!');
         setIsSubmitting(false);
         setSubmitStatus('success');
         setFormData({ fullName: '', email: '', message: '' });
@@ -103,26 +80,10 @@ const Contact = () => {
           setSubmitStatus('');
         }, 5000);
       } else {
-        console.error('❌ Email send failed with status:', result.status);
         throw new Error(`Failed to send email. Status: ${result.status}`);
       }
     } catch (error) {
-      console.error('💥 Email sending failed:');
-      console.error('Error name:', error.name);
-      console.error('Error message:', error.message);
-      console.error('Error stack:', error.stack);
-      
-      // Check for specific EmailJS errors
-      if (error.name === 'TypeError' && error.message.includes('fetch')) {
-        console.error('🌐 Network/CORS issue detected');
-      }
-      if (error.status) {
-        console.error('HTTP Status:', error.status);
-      }
-      if (error.text) {
-        console.error('Response text:', error.text);
-      }
-      
+      console.error('Error sending email:', error);
       setIsSubmitting(false);
       setSubmitStatus('error');
       
