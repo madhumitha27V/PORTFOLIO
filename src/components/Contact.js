@@ -1,7 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  // EmailJS configuration from environment variables or fallback
+  const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_ma6jzlj';
+  const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_sykfpfn';
+  const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || '3F0TrdMjykpNA4fMT';
+
+  // Initialize EmailJS with better error handling
+  useEffect(() => {
+    try {
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+      console.log('EmailJS initialized successfully');
+      console.log('Using Service ID:', EMAILJS_SERVICE_ID);
+    } catch (error) {
+      console.error('EmailJS initialization failed:', error);
+    }
+  }, [EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID]);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -41,19 +56,45 @@ const Contact = () => {
     }
     
     try {
-      // Send email using EmailJS
+      console.log('🚀 Starting email send process...');
+      console.log('Environment:', process.env.NODE_ENV);
+      console.log('Current URL:', window.location.origin);
+      console.log('Service ID:', EMAILJS_SERVICE_ID);
+      console.log('Template ID:', EMAILJS_TEMPLATE_ID);
+      console.log('Public Key:', EMAILJS_PUBLIC_KEY);
+      
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.fullName.trim(),
+        from_email: formData.email.trim(),
+        message: formData.message.trim(),
+        to_name: 'Madhumitha', // Add recipient name
+        reply_to: formData.email.trim()
+      };
+      
+      console.log('📧 Template params:', templateParams);
+      
+      // Test EmailJS availability
+      if (typeof emailjs === 'undefined') {
+        throw new Error('EmailJS is not loaded');
+      }
+      
+      console.log('📤 Sending email via EmailJS...');
+      
+      // Send email using EmailJS - simplified version for production
       const result = await emailjs.send(
-        'service_ma6jzlj',    // Your Service ID
-        'template_sykfpfn',   // Your Template ID
-        {
-          from_name: formData.fullName.trim(),
-          from_email: formData.email.trim(),
-          message: formData.message.trim()
-        },
-        '3F0TrdMjykpNA4fMT'  // Your Public Key
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
       );
 
+      console.log('✅ EmailJS result:', result);
+      console.log('Status:', result.status);
+      console.log('Text:', result.text);
+
       if (result.status === 200) {
+        console.log('🎉 Email sent successfully!');
         setIsSubmitting(false);
         setSubmitStatus('success');
         setFormData({ fullName: '', email: '', message: '' });
@@ -62,12 +103,29 @@ const Contact = () => {
           setSubmitStatus('');
         }, 5000);
       } else {
-        throw new Error('Failed to send email');
+        console.error('❌ Email send failed with status:', result.status);
+        throw new Error(`Failed to send email. Status: ${result.status}`);
       }
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('💥 Email sending failed:');
+      console.error('Error name:', error.name);
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
+      
+      // Check for specific EmailJS errors
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        console.error('🌐 Network/CORS issue detected');
+      }
+      if (error.status) {
+        console.error('HTTP Status:', error.status);
+      }
+      if (error.text) {
+        console.error('Response text:', error.text);
+      }
+      
       setIsSubmitting(false);
       setSubmitStatus('error');
+      
       setTimeout(() => {
         setSubmitStatus('');
       }, 5000);
@@ -91,7 +149,7 @@ const Contact = () => {
               <div className="contact-details">
                 <h3>Email</h3>
                 <p>Click below to send me an email</p>
-                <a href="mailto:27madhumitha.v@gmail.com" className="contact-link">
+                <a href="mailto:madhumithaportfolio0913@gmail.com" className="contact-link">
                   Send Message
                 </a>
               </div>
@@ -111,7 +169,7 @@ const Contact = () => {
             </div>
 
             <div className="resume-download">
-              <a href="https://drive.google.com/file/d/1aubukplWxVxAGYtDplntR5OXDqHnvIW6/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              <a href="https://drive.google.com/uc?export=download&id=1aubukplWxVxAGYtDplntR5OXDqHnvIW6" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 <i className="fas fa-download"></i>
                 Download Resume
               </a>
