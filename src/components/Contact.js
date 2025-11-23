@@ -40,8 +40,8 @@ const Contact = () => {
     }
     
     try {
-      // Send to your backend server
-      const response = await fetch('http://localhost:5000/api/contact', {
+      // Send to your Vercel backend server
+      const response = await fetch('https://madhumithav.vercel.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -99,8 +99,6 @@ const Contact = () => {
               </div>
             </div>
 
-
-
             <div className="contact-card">
               <div className="contact-icon">
                 <i className="fab fa-linkedin"></i>
@@ -113,8 +111,6 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-
-
 
             <div className="resume-download">
               <a href="https://drive.google.com/file/d/1aubukplWxVxAGYtDplntR5OXDqHnvIW6/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
