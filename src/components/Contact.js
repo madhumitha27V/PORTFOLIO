@@ -92,9 +92,9 @@ const Contact = () => {
               </div>
               <div className="contact-details">
                 <h3>Email</h3>
-                <p>27madhumitha.v@gmail.com</p>
+                <p>Click below to send me an email</p>
                 <a href="mailto:27madhumitha.v@gmail.com" className="contact-link">
-                  Send Email
+                  Send Message
                 </a>
               </div>
             </div>
@@ -117,7 +117,7 @@ const Contact = () => {
 
 
             <div className="resume-download">
-              <a href="/resume.pdf" download className="btn btn-primary">
+              <a href="https://drive.google.com/file/d/1aubukplWxVxAGYtDplntR5OXDqHnvIW6/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 <i className="fas fa-download"></i>
                 Download Resume
               </a>

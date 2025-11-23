@@ -57,11 +57,14 @@ app.post('/api/contact', async (req, res) => {
     // Email options
     const mailOptions = {
       from: {
-        name: 'Portfolio Contact Form',
+        name: `${name} via Portfolio`,
         address: process.env.GMAIL_USER
       },
       to: process.env.GMAIL_USER,
-      replyTo: email,
+      replyTo: {
+        name: name,
+        address: email
+      },
       subject: `Portfolio Contact from: ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

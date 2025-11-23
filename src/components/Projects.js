@@ -18,7 +18,7 @@ const Projects = () => {
       ],
       technologies: ["Python", "SQLite", "OCR", "Blockchain","Tesseract"],
       githubLink: "https://github.com/madhumitha27V/CERTIFICATE-VALIDATOR.git",
-      liveLink: "#",
+      liveLink: "https://certificate-validator-94pp.onrender.com",
       image: "🎓"
     },
     {
@@ -36,7 +36,7 @@ const Projects = () => {
       ],
       technologies: ["IoT", "Sensors", "Web Interface", "MERN", "Weather API"],
       githubLink: "https://github.com/madhumitha27V/SMART-DRAINAGE-SYSTEM-AND-MONITORING-WITH-WEB-INTERFACE.git",
-      liveLink: "#",
+      //liveLink: "#",
       image: "🌊"
     },
     {
@@ -53,7 +53,7 @@ const Projects = () => {
       ],
       technologies: ["AI", "TensorFlow", "YOLOv8", "Computer Vision", "Image Processing"],
       githubLink: "https://github.com/madhumitha27V/REAL-TIME-TRAFFIC-MANAGEMENT-SYSTEM-FOR-DYNAMIC-SIGNAL-CONTROL-AND-EMERGENCY-VEHICLE-PRIORITIZATION.git",
-      liveLink: "#",
+      //liveLink: "#",
       image: "🚦"
     }
   ];
@@ -103,18 +103,24 @@ const Projects = () => {
                     href={project.githubLink} 
                     className="project-link"
                     onClick={(e) => e.stopPropagation()}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <i className="fab fa-github"></i>
                     GitHub
                   </a>
-                  <a 
-                    href={project.liveLink} 
-                    className="project-link"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <i className="fas fa-external-link-alt"></i>
-                    Live Link
-                  </a>
+                  {project.liveLink && (
+                    <a 
+                      href={project.liveLink} 
+                      className="project-link"
+                      onClick={(e) => e.stopPropagation()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fas fa-external-link-alt"></i>
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -159,14 +165,16 @@ const Projects = () => {
                 </div>
 
                 <div className="modal-links">
-                  <a href={selectedProject.githubLink} className="btn btn-outline">
+                  <a href={selectedProject.githubLink} className="btn btn-outline" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-github"></i>
                     View Code
                   </a>
-                  <a href={selectedProject.liveLink} className="btn btn-primary">
-                    <i className="fas fa-external-link-alt"></i>
-                    Live Demo
-                  </a>
+                  {selectedProject.liveLink && (
+                    <a href={selectedProject.liveLink} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                      <i className="fas fa-external-link-alt"></i>
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

@@ -23,12 +23,13 @@ const Hero = () => {
                 Contact Me
               </a>
               <a 
-                href="/resume.pdf" 
-                download 
+                href="https://drive.google.com/uc?export=download&id=1aubukplWxVxAGYtDplntR5OXDqHnvIW6" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-outline"
               >
                 <i className="fas fa-download"></i>
-                Check Resume
+                Download Resume
               </a>
             </div>
 
@@ -47,11 +48,7 @@ const Hero = () => {
 
           <div className="hero-image">
             <div className="hero-image-container">
-              <img 
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
-                alt="Madhumitha V" 
-                className="hero-profile-image"
-              />
+              
             </div>
           </div>
         </div>

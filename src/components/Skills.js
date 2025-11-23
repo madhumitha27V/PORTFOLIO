@@ -5,9 +5,9 @@ const Skills = () => {
     {
       title: "Programming Languages",
       skills: [
-        { name: "C", level: 90, icon: "fas fa-code" },
+        { name: "C", level: 80, icon: "fas fa-code" },
         { name: "Python", level: 70, icon: "fab fa-python" },
-        { name: "Java", level: 70, icon: "fab fa-java" },
+        { name: "Java", level: 65, icon: "fab fa-java" },
       ]
     },
     {
@@ -15,14 +15,14 @@ const Skills = () => {
       skills: [
         { name: "HTML", level: 95, icon: "fab fa-html5" },
         { name: "CSS", level: 90, icon: "fab fa-css3-alt" },
-        { name: "React.js", level: 85, icon: "fab fa-react" },
-        { name: "Node.js", level: 80, icon: "fab fa-node-js" }
+        { name: "React.js", level: 75, icon: "fab fa-react" },
+        { name: "Node.js", level: 75, icon: "fab fa-node-js" }
       ]
     },
     {
       title: "Database & Tools",
       skills: [
-        { name: "MongoDB", level: 85, icon: "fas fa-database" },
+        { name: "MongoDB", level: 70, icon: "fas fa-database" },
         { name: "Git", level: 90, icon: "fab fa-git-alt" },
         { name: "GitHub", level: 90, icon: "fab fa-github" }
       ]
@@ -30,8 +30,8 @@ const Skills = () => {
     {
       title: "Core Technologies",
       skills: [
-        { name: "Data Structures", level: 85, icon: "fas fa-project-diagram" },
-        { name: "Algorithms", level: 80, icon: "fas fa-cogs" },
+        { name: "Data Structures", level: 70, icon: "fas fa-project-diagram" },
+        { name: "Algorithms", level: 65, icon: "fas fa-cogs" },
         { name: "IoT", level: 70, icon: "fas fa-microchip" }
       ]
     }

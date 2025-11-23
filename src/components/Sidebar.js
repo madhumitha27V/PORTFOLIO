@@ -105,7 +105,7 @@ const Sidebar = () => {
                }}>
               <i className="fab fa-linkedin"></i>
             </a>
-            <a href="mailto:27madhumitha.v@gmail.com" 
+            <a href="#contact" 
                className="social-link" title="Email" style={{
                  display: 'flex',
                  alignItems: 'center',
