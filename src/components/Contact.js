@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -40,23 +41,31 @@ const Contact = () => {
     }
     
     try {
-      // Contact form messages go to madhumithaportfolio0913@gmail.com
-      const mailtoLink = `mailto:madhumithaportfolio0913@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(formData.fullName)}&body=Name: ${encodeURIComponent(formData.fullName)}%0AEmail: ${encodeURIComponent(formData.email)}%0A%0AMessage:%0A${encodeURIComponent(formData.message)}`;
-      
-      // Open user's email client
-      window.location.href = mailtoLink;
-      
-      // Show success message
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ fullName: '', email: '', message: '' });
-      
-      setTimeout(() => {
-        setSubmitStatus('');
-      }, 5000);
-      
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        'service_ma6jzlj',    // Your Service ID
+        'template_sykfpfn',   // Your Template ID
+        {
+          from_name: formData.fullName.trim(),
+          from_email: formData.email.trim(),
+          message: formData.message.trim()
+        },
+        '3F0TrdMjykpNA4fMT'  // Your Public Key
+      );
+
+      if (result.status === 200) {
+        setIsSubmitting(false);
+        setSubmitStatus('success');
+        setFormData({ fullName: '', email: '', message: '' });
+        
+        setTimeout(() => {
+          setSubmitStatus('');
+        }, 5000);
+      } else {
+        throw new Error('Failed to send email');
+      }
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error sending email:', error);
       setIsSubmitting(false);
       setSubmitStatus('error');
       setTimeout(() => {
@@ -82,7 +91,6 @@ const Contact = () => {
               <div className="contact-details">
                 <h3>Email</h3>
                 <p>Click below to send me an email</p>
-                {/* Mail icon links to 27madhumitha.v@gmail.com */}
                 <a href="mailto:27madhumitha.v@gmail.com" className="contact-link">
                   Send Message
                 </a>
@@ -172,14 +180,14 @@ const Contact = () => {
               {submitStatus === 'success' && (
                 <div className="submit-status success">
                   <i className="fas fa-check-circle"></i>
-                  Email opened in your mail app! Please send the pre-filled email.
+                  Email sent successfully! I'll get back to you soon.
                 </div>
               )}
 
               {submitStatus === 'error' && (
                 <div className="submit-status error">
                   <i className="fas fa-exclamation-circle"></i>
-                  Please try again or contact me directly.
+                  Failed to send email. Please try again or contact me directly.
                 </div>
               )}
             </form>
