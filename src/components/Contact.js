@@ -40,34 +40,23 @@ const Contact = () => {
     }
     
     try {
-      // Send to your Vercel backend server
-      const response = await fetch('https://madhumithav.vercel.app/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.fullName.trim(),
-          email: formData.email.trim(),
-          message: formData.message.trim()
-        })
-      });
-
-      const result = await response.json();
-
-      if (response.ok && result.status === 'success') {
-        setIsSubmitting(false);
-        setSubmitStatus('success');
-        setFormData({ fullName: '', email: '', message: '' });
-        
-        setTimeout(() => {
-          setSubmitStatus('');
-        }, 5000);
-      } else {
-        throw new Error(result.message || 'Failed to send message');
-      }
+      // Contact form messages go to madhumithaportfolio0913@gmail.com
+      const mailtoLink = `mailto:madhumithaportfolio0913@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(formData.fullName)}&body=Name: ${encodeURIComponent(formData.fullName)}%0AEmail: ${encodeURIComponent(formData.email)}%0A%0AMessage:%0A${encodeURIComponent(formData.message)}`;
+      
+      // Open user's email client
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      setIsSubmitting(false);
+      setSubmitStatus('success');
+      setFormData({ fullName: '', email: '', message: '' });
+      
+      setTimeout(() => {
+        setSubmitStatus('');
+      }, 5000);
+      
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('Error:', error);
       setIsSubmitting(false);
       setSubmitStatus('error');
       setTimeout(() => {
@@ -93,6 +82,7 @@ const Contact = () => {
               <div className="contact-details">
                 <h3>Email</h3>
                 <p>Click below to send me an email</p>
+                {/* Mail icon links to 27madhumitha.v@gmail.com */}
                 <a href="mailto:27madhumitha.v@gmail.com" className="contact-link">
                   Send Message
                 </a>
@@ -182,14 +172,14 @@ const Contact = () => {
               {submitStatus === 'success' && (
                 <div className="submit-status success">
                   <i className="fas fa-check-circle"></i>
-                  Email sent successfully! I'll get back to you soon.
+                  Email opened in your mail app! Please send the pre-filled email.
                 </div>
               )}
 
               {submitStatus === 'error' && (
                 <div className="submit-status error">
                   <i className="fas fa-exclamation-circle"></i>
-                  Failed to send email. Please try again or contact me directly.
+                  Please try again or contact me directly.
                 </div>
               )}
             </form>
