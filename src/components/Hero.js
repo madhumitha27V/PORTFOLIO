@@ -12,7 +12,7 @@ const Hero = () => {
               
             </div>
             <p className="hero-description">
-              Im an Electrical and Electronics Engineering student with a strong foundation in Digital Electronics and a passion for building innovative, end-to-end technology solutions I specialize in integrating hardware with full-stack web development to solve real-world problems with strong interest in IoT and also Im actively working with mern stack.I am actively seeking opportunities to apply my skill to create impactful and scalable solutions.
+              Im an Electrical and Electronics Engineering student with a strong foundation in Digital Electronics and a passion for building innovative, end-to-end technology solutions.I specialize in integrating hardware with full-stack web development to solve real-world problems with strong interest in IoT and also I'm actively working with mern stack.I am seeking opportunities to apply my skill to create impactful and scalable solutions.
             </p>
             
             <div className="hero-buttons">
@@ -38,7 +38,7 @@ const Hero = () => {
               <a href="https://www.linkedin.com/in/madhhv/" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-linkedin"></i>
               </a>
-              <a href="mailto:madhumithaportfolio0913@gmail.com">
+              <a href="mailto:27madhumitha.v@gmail.com">
                 <i className="fas fa-envelope"></i>
               </a>
             </div>
