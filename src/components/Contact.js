@@ -110,7 +110,7 @@ const Contact = () => {
               <div className="contact-details">
                 <h3>Email</h3>
                 <p>Click below to send me an email</p>
-                <a href="mailto:madhumithaportfolio0913@gmail.com" className="contact-link">
+                <a href="mailto:27madhumitha.v@gmail.com" className="contact-link">
                   Send Message
                 </a>
               </div>
